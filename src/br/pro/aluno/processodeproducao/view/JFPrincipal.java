@@ -27,21 +27,73 @@ public class JFPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jdpPrincipal = new javax.swing.JDesktopPane();
+        jmiPrincipal = new javax.swing.JMenuBar();
+        jmiCadastros = new javax.swing.JMenu();
+        jmiProduto = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jmiSair = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jdpPrincipal.setMinimumSize(new java.awt.Dimension(106, 34));
+
+        javax.swing.GroupLayout jdpPrincipalLayout = new javax.swing.GroupLayout(jdpPrincipal);
+        jdpPrincipal.setLayout(jdpPrincipalLayout);
+        jdpPrincipalLayout.setHorizontalGroup(
+            jdpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 569, Short.MAX_VALUE)
+        );
+        jdpPrincipalLayout.setVerticalGroup(
+            jdpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 569, Short.MAX_VALUE)
+        );
+
+        jmiCadastros.setText("Cadastros");
+
+        jmiProduto.setText("Produto");
+        jmiProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiProdutoActionPerformed(evt);
+            }
+        });
+        jmiCadastros.add(jmiProduto);
+        jmiCadastros.add(jSeparator1);
+
+        jmiSair.setText("Sair");
+        jmiCadastros.add(jmiSair);
+
+        jmiPrincipal.add(jmiCadastros);
+
+        jMenu2.setText("Edit");
+        jmiPrincipal.add(jMenu2);
+
+        setJMenuBar(jmiPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jdpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jdpPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmiProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiProdutoActionPerformed
+    JIFProduto janela = new JIFProduto();
+    jdpPrincipal.add(janela);
+    janela.setVisible(true);
+    }//GEN-LAST:event_jmiProdutoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +131,12 @@ public class JFPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JDesktopPane jdpPrincipal;
+    private javax.swing.JMenu jmiCadastros;
+    private javax.swing.JMenuBar jmiPrincipal;
+    private javax.swing.JMenuItem jmiProduto;
+    private javax.swing.JMenuItem jmiSair;
     // End of variables declaration//GEN-END:variables
 }

@@ -27,20 +27,20 @@ public class ProdutoModel {
         this.tempFabric = tempFabric;
     }
 
+     public int getIdProd() {
+        return idProd;
+    }
+
+    public void setIdProd(int idProd) {
+        this.idProd = idProd;
+    }
+    
     public String getNomeProd() {
         return nomeProd;
     }
 
     public void setNomeProd(String nomeProd) {
         this.nomeProd = nomeProd;
-    }
-
-    public String getIdProd() {
-        return idProd;
-    }
-
-    public void setIdProd(String idProd) {
-        this.idProd = idProd;
     }
 
     public double getAltura() {
@@ -76,18 +76,18 @@ public class ProdutoModel {
     }
     private double valorProd;
     private double tempFabric;
-    private String nomeProd;
-    private String idProd;
+    private int idProd;
+    private String nomeProd;  
     private double altura;
     private double comprimento;
     private double largura;
     private int quantEstoque;
 
-    public ProdutoModel(double valorProd, double tempFabric, String nomeProd, String idProd, double altura, double comprimento, double largura, int quantEstoque) {
+    public ProdutoModel(double valorProd, double tempFabric, int idProd, String nomeProd, double altura, double comprimento, double largura, int quantEstoque) {
         this.valorProd = valorProd;
         this.tempFabric = tempFabric;
-        this.nomeProd = nomeProd;
         this.idProd = idProd;
+        this.nomeProd = nomeProd;
         this.altura = altura;
         this.comprimento = comprimento;
         this.largura = largura;
@@ -97,8 +97,8 @@ public class ProdutoModel {
     public ProdutoModel() {
         valorProd = 0;
         tempFabric = 0;
-        nomeProd = new String();
-        idProd = new String();
+        idProd = 0;
+        idProd = 0;
         altura = 0;
         comprimento = 0;
         largura = 0;

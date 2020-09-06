@@ -19,7 +19,7 @@ public class ProdutoData extends Conexao{
     public boolean incluir(ProdutoModel obj) throws Exception{
         String sql="INSERT INTO produto (valorProd, tempFabric, nomeProd, "
                 + "altura, comprimento, largura, quantEstoque) "
-                + "values (?,?,?,?,?,?)";
+                + "values (?,?,?,?,?,?,?)";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setDouble(1, obj.getValorProd());
         ps.setDouble(2, obj.getTempFabric());
@@ -42,7 +42,7 @@ public class ProdutoData extends Conexao{
         ps.setDouble(5, obj.getComprimento());
         ps.setDouble(6, obj.getLargura());
         ps.setInt(7, obj.getQuantEstoque());
-        ps.setString(8, obj.getIdProd());   
+        ps.setInt(8, obj.getIdProd());   
         return ps.executeUpdate() > 0;
     }
     
@@ -60,10 +60,11 @@ public class ProdutoData extends Conexao{
         for(int i = 0; i < palavras.length; i++){
             if(i > 0 && i != palavras.length) 
             sql+="or ";
-            sql+="valorProd ILIKE '"+palavras[i]+"%' OR tempFabric ILIKE '%"+palavras[i]+"%' "
-            + "OR nomeProd ILIKE '%"+palavras[i]+"%' OR altura ILIKE '%"+palavras[i]+"%' "
-            + "OR comprimento ILIKE '%"+palavras[i]+"%' OR largura ILIKE '%"+palavras[i]+"%' "
-            + "OR quantEstoque ILIKE '%"+palavras[i]+"%' ";
+            sql +="nomeProd ILIKE '%"+palavras[i]+"%' ";         
+//            sql+="valorProd ILIKE '"+palavras[i]+"%' OR tempFabric ILIKE '%"+palavras[i]+"%' "
+//            + "OR nomeProd ILIKE '%"+palavras[i]+"%' OR altura ILIKE '%"+palavras[i]+"%' "
+//            + "OR comprimento ILIKE '%"+palavras[i]+"%' OR largura ILIKE '%"+palavras[i]+"%' "
+//            + "OR quantEstoque ILIKE '%"+palavras[i]+"%' ";
         }
 
         System.out.println(sql);
@@ -72,8 +73,8 @@ public class ProdutoData extends Conexao{
         while(rs.next()){
             ProdutoModel obj = new ProdutoModel(rs.getDouble("valorProd"),
             rs.getDouble("tempFabric"),
+            rs.getInt("idProd"),
             rs.getString("nomeProd"),
-            rs.getString("idProd"),
             rs.getDouble("altura"),
             rs.getDouble("comprimento"),
             rs.getDouble("largura"),
