@@ -41,7 +41,7 @@ CREATE TABLE produto
 	(valorProd NUMERIC(10),
 	 tempFabric NUMERIC(10),
 	 idProd serial NOT NULL,
-	 nomeProd VARCHAR(15),
+	 nomeProd VARCHAR(80),
 	 altura NUMERIC(10),
 	 comprimento NUMERIC(10),
 	 largura NUMERIC(10),

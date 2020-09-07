@@ -32,7 +32,7 @@ public class ProdutoData extends Conexao{
     }
     
     public boolean editar(ProdutoModel obj) throws Exception{
-        String sql = "UPDATE produto SET tempFabric = ?, nomeProd = ?, altura = ?, "
+        String sql = "UPDATE produto SET ValorProd = ?, tempFabric = ?, nomeProd = ?, altura = ?, "
                 + "comprimento = ?, largura = ?, quantEstoque = ? WHERE idProd = ?";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setDouble(1, obj.getValorProd());

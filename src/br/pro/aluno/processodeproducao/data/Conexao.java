@@ -21,6 +21,6 @@ public class Conexao {
         String driver="org.postgresql.Driver";
         String url="jdbc:postgresql://localhost:5432/bdprocessodeproducao";
         Class.forName(driver);
-        con = DriverManager.getConnection(url, "postgres", "postdba");
+        con = DriverManager.getConnection(url, "postgres", "lara2011");
     }
 }

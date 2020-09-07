@@ -5,34 +5,30 @@
  */
 package br.pro.aluno.processodeproducao.view;
 
-import br.pro.aluno.processodeproducao.data.ProdutoData;
-import br.pro.aluno.processodeproducao.model.ProdutoModel;
+import br.pro.aluno.processodeproducao.data.UsuarioData;
+import br.pro.aluno.processodeproducao.model.UsuarioModel;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Casa
+ * @author João
  */
-public class JIFProduto extends javax.swing.JInternalFrame {
-    ProdutoModel obj;
-    ProdutoData DAO;
-    ArrayList<ProdutoModel> lista;
-    int acao = 0;
+public class JIFUsuario extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form JIFProduto
-     */
-    public JIFProduto() {
-        try{
-            obj = new ProdutoModel();
-            DAO = new ProdutoData();
-            lista = new ArrayList<>();
-            initComponents();
-        }catch(Exception e){
-                JOptionPane.showMessageDialog(this, "Erro: "+e.getMessage());
-                }
+  UsuarioModel obj;
+  UsuarioData DAO;
+    public JIFUsuario() {
+      try {
+          obj = new UsuarioModel();
+          DAO = new UsuarioData();
+      } catch (Exception e) {
+          JOptionPane.showMessageDialog(this, e.getMessage());
+      }
+        initComponents();
     }
 
     /**
@@ -44,14 +40,11 @@ public class JIFProduto extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jlId = new javax.swing.JLabel();
-        jlNomeProd = new javax.swing.JLabel();
-        jtNomeProd = new javax.swing.JTextField();
-        jlAltura = new javax.swing.JLabel();
-        jtAltura = new javax.swing.JTextField();
-        jtLargura = new javax.swing.JTextField();
-        jlQuantEstoque = new javax.swing.JLabel();
-        jlTempFabric = new javax.swing.JLabel();
+        jbExcluir = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtbDados = new javax.swing.JTable();
+        jlPesquisa = new javax.swing.JLabel();
+        jtPesquisa = new javax.swing.JTextField();
         jlValor = new javax.swing.JLabel();
         jtComprimento = new javax.swing.JTextField();
         jtQuantEstoque = new javax.swing.JTextField();
@@ -62,105 +55,21 @@ public class JIFProduto extends javax.swing.JInternalFrame {
         jlComprimento = new javax.swing.JLabel();
         jbNovo = new javax.swing.JButton();
         jbSalvar = new javax.swing.JButton();
-        jbCancelar = new javax.swing.JButton();
-        jbEditar = new javax.swing.JButton();
-        jbExcluir = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtbDados = new javax.swing.JTable();
-        jlPesquisa = new javax.swing.JLabel();
-        jtPesquisa = new javax.swing.JTextField();
+        jlId = new javax.swing.JLabel();
+        jlNomeProd = new javax.swing.JLabel();
+        jtNomeProd = new javax.swing.JTextField();
+        jlAltura = new javax.swing.JLabel();
+        jtAltura = new javax.swing.JTextField();
+        jtLargura = new javax.swing.JTextField();
+        jlQuantEstoque = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jlTempFabric = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-
-        setClosable(true);
-        setIconifiable(true);
-        setTitle("Cadastro de Produtos");
-
-        jlId.setText("Id");
-
-        jlNomeProd.setText("Nome do produto");
-
-        jtNomeProd.setEnabled(false);
-        jtNomeProd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtNomeProdActionPerformed(evt);
-            }
-        });
-
-        jlAltura.setText("Altura");
-
-        jtAltura.setEnabled(false);
-        jtAltura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtAlturaActionPerformed(evt);
-            }
-        });
-
-        jtLargura.setEnabled(false);
-        jtLargura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtLarguraActionPerformed(evt);
-            }
-        });
-
-        jlQuantEstoque.setText("Quantidade no estoque");
-
-        jlTempFabric.setText("Tempo de Fabricação");
-
-        jlValor.setText("Valor ");
-
-        jtComprimento.setEnabled(false);
-
-        jtQuantEstoque.setEnabled(false);
-        jtQuantEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtQuantEstoqueActionPerformed(evt);
-            }
-        });
-
-        jtTempFabric.setEnabled(false);
-
-        jtValorProd.setEnabled(false);
-
-        jlId2.setText("0");
-
-        jlLargura.setText("Largura");
-
-        jlComprimento.setText("Comprimento");
-
-        jbNovo.setText("Novo");
-        jbNovo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbNovoActionPerformed(evt);
-            }
-        });
-
-        jbSalvar.setText("Salvar");
-        jbSalvar.setEnabled(false);
-        jbSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbSalvarActionPerformed(evt);
-            }
-        });
-
-        jbCancelar.setText("Cancelar");
-        jbCancelar.setEnabled(false);
-        jbCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbCancelarActionPerformed(evt);
-            }
-        });
-
-        jbEditar.setText("Editar");
-        jbEditar.setEnabled(false);
-        jbEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbEditarActionPerformed(evt);
-            }
-        });
+        jbCancelar = new javax.swing.JButton();
+        jbEditar = new javax.swing.JButton();
 
         jbExcluir.setText("Excluir");
         jbExcluir.setEnabled(false);
@@ -204,7 +113,74 @@ public class JIFProduto extends javax.swing.JInternalFrame {
             }
         });
 
+        jlValor.setText("Valor ");
+
+        jtComprimento.setEnabled(false);
+
+        jtQuantEstoque.setEnabled(false);
+        jtQuantEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtQuantEstoqueActionPerformed(evt);
+            }
+        });
+
+        jtTempFabric.setEnabled(false);
+
+        jtValorProd.setEnabled(false);
+
+        jlId2.setText("0");
+
+        jlLargura.setText("Largura");
+
+        jlComprimento.setText("Comprimento");
+
+        jbNovo.setText("Novo");
+        jbNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbNovoActionPerformed(evt);
+            }
+        });
+
+        jbSalvar.setText("Salvar");
+        jbSalvar.setEnabled(false);
+        jbSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalvarActionPerformed(evt);
+            }
+        });
+
+        jlId.setText("Id");
+
+        jlNomeProd.setText("Nome do produto");
+
+        jtNomeProd.setEnabled(false);
+        jtNomeProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNomeProdActionPerformed(evt);
+            }
+        });
+
+        jlAltura.setText("Altura");
+
+        jtAltura.setEnabled(false);
+        jtAltura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtAlturaActionPerformed(evt);
+            }
+        });
+
+        jtLargura.setEnabled(false);
+        jtLargura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtLarguraActionPerformed(evt);
+            }
+        });
+
+        jlQuantEstoque.setText("Quantidade no estoque");
+
         jLabel1.setText("mm");
+
+        jlTempFabric.setText("Tempo de Fabricação");
 
         jLabel2.setText("mm");
 
@@ -213,6 +189,22 @@ public class JIFProduto extends javax.swing.JInternalFrame {
         jLabel4.setText("R$");
 
         jLabel5.setText("s");
+
+        jbCancelar.setText("Cancelar");
+        jbCancelar.setEnabled(false);
+        jbCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCancelarActionPerformed(evt);
+            }
+        });
+
+        jbEditar.setText("Editar");
+        jbEditar.setEnabled(false);
+        jbEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEditarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -282,7 +274,7 @@ public class JIFProduto extends javax.swing.JInternalFrame {
                         .addGap(14, 14, 14)
                         .addComponent(jScrollPane1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(29, Short.MAX_VALUE)
+                        .addContainerGap(103, Short.MAX_VALUE)
                         .addComponent(jlPesquisa)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -347,104 +339,11 @@ public class JIFProduto extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jtAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtAlturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtAlturaActionPerformed
-
-    private void jtQuantEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtQuantEstoqueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtQuantEstoqueActionPerformed
-
-    private void jtNomeProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNomeProdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtNomeProdActionPerformed
-
-    private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
-        br.pro.aluno.processodeproducao.extras.Formularios.limparCampos(this);
-        br.pro.aluno.processodeproducao.extras.Formularios.tratarCampos(this, true);
-        jbNovo.setEnabled(false);
-        jbSalvar.setEnabled(true);
-        jbCancelar.setEnabled(true);
-        acao = 1; //Novo - insert
-    }//GEN-LAST:event_jbNovoActionPerformed
-
-    private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
-        br.pro.aluno.processodeproducao.extras.Formularios.limparCampos(this);
-        br.pro.aluno.processodeproducao.extras.Formularios.tratarCampos(this, false);
-        jbNovo.setEnabled(true);
-        jbSalvar.setEnabled(false);
-        jbCancelar.setEnabled(false);
-        jbEditar.setEnabled(false);
-        jbExcluir.setEnabled(false);
-        DefaultTableModel mp = (DefaultTableModel) jtbDados.getModel();
-        mp.setNumRows(0);
-//        jtPesquisa.setEnabled(true);
-    }//GEN-LAST:event_jbCancelarActionPerformed
-
-    private void jbEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEditarActionPerformed
-        br.pro.aluno.processodeproducao.extras.Formularios.tratarCampos(this, true);
-        jbNovo.setEnabled(false);
-        jbSalvar.setEnabled(true);
-        jbCancelar.setEnabled(true);
-        jbEditar.setEnabled(false);
-        jbExcluir.setEnabled(false);
-//        jtPesquisa.setEnabled(false);
-        acao = 2;//Atualizar - update 
-    }//GEN-LAST:event_jbEditarActionPerformed
-
-    private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
-        try {
-            if(validarCampos()){
-                if(preencherObjeto()){
-                    if(acao == 1){
-                        if(DAO.incluir(obj)){
-                            JOptionPane.showMessageDialog(this, "Salvo com sucesso");
-                            jbCancelarActionPerformed(evt);
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(this, "Erro ao salvar");
-                        }
-                    }
-                    
-                    if(acao==2){
-                        if(DAO.editar(obj)){
-                            JOptionPane.showMessageDialog(this, "Atualizado com sucesso");
-                            jbCancelarActionPerformed(evt);
-                        } else {
-                            JOptionPane.showMessageDialog(this, "Erro ao salvar");
-                        }
-                    }
-                }
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Erro ao salvar: " +e.getMessage());
-        }
-    }//GEN-LAST:event_jbSalvarActionPerformed
-
-    private void jtPesquisaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPesquisaKeyReleased
-        try {
-            if(jtPesquisa.getText().trim().length()>=1){
-            lista = DAO.pesquisar(jtPesquisa.getText());
-            DefaultTableModel mp = (DefaultTableModel) jtbDados.getModel();
-            mp.setNumRows(0);//limpar a tabela
-            for(ProdutoModel ob : lista){       
-                  mp.addRow(new String[]{""+ob.getIdProd(), ob.getNomeProd(), ""+ob.getAltura(), ""+ob.getLargura(), ""+ob.getComprimento(), ""+ob.getQuantEstoque(), ""+ob.getTempFabric(), ""+ob.getValorProd()});
-           }
-           }else if (jtPesquisa.getText().trim().length()==0){
-           DefaultTableModel mp = (DefaultTableModel) jtbDados.getModel();
-            mp.setNumRows(0);
-           }
-            
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Ocorreu um erro: "+e.getMessage());
-        }
-    }//GEN-LAST:event_jtPesquisaKeyReleased
 
     private void jtbDadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbDadosMouseClicked
         try {
@@ -474,10 +373,104 @@ public class JIFProduto extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Erro ao selecionar: "+e.getMessage());
         }
     }//GEN-LAST:event_jtbDadosMouseClicked
+        ArrayList<UsuarioModel> lista = new ArrayList<>();
+    private void jtPesquisaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPesquisaKeyReleased
+        try {
+            if(jtPesquisa.getText().trim().length()>=1){
+                lista = DAO.pesquisar(jtPesquisa.getText());
+                DefaultTableModel mp = (DefaultTableModel) jtbDados.getModel();
+                mp.setNumRows(0);//limpar a tabela
+                for(ProdutoModel ob : lista){
+                    mp.addRow(new String[]{""+ob.getIdProd(), ob.getNomeProd(), ""+ob.getAltura(), ""+ob.getLargura(), ""+ob.getComprimento(), ""+ob.getQuantEstoque(), ""+ob.getTempFabric(), ""+ob.getValorProd()});
+                }
+            }else if (jtPesquisa.getText().trim().length()==0){
+                DefaultTableModel mp = (DefaultTableModel) jtbDados.getModel();
+                mp.setNumRows(0);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocorreu um erro: "+e.getMessage());
+        }
+    }//GEN-LAST:event_jtPesquisaKeyReleased
+
+    private void jtQuantEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtQuantEstoqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtQuantEstoqueActionPerformed
+
+    private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
+        br.pro.aluno.processodeproducao.extras.Formularios.limparCampos(this);
+        br.pro.aluno.processodeproducao.extras.Formularios.tratarCampos(this, true);
+        jbNovo.setEnabled(false);
+        jbSalvar.setEnabled(true);
+        jbCancelar.setEnabled(true);
+        acao = 1; //Novo - insert
+    }//GEN-LAST:event_jbNovoActionPerformed
+
+    private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
+        try {
+            if(validarCampos()){
+                if(preencherObjeto()){
+                    if(acao == 1){
+                        if(DAO.incluir(obj)){
+                            JOptionPane.showMessageDialog(this, "Salvo com sucesso");
+                            jbCancelarActionPerformed(evt);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(this, "Erro ao salvar");
+                        }
+                    }
+
+                    if(acao==2){
+                        if(DAO.editar(obj)){
+                            JOptionPane.showMessageDialog(this, "Atualizado com sucesso");
+                            jbCancelarActionPerformed(evt);
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Erro ao salvar");
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Erro ao salvar: " +e.getMessage());
+        }
+    }//GEN-LAST:event_jbSalvarActionPerformed
+
+    private void jtNomeProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNomeProdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNomeProdActionPerformed
+
+    private void jtAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtAlturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtAlturaActionPerformed
 
     private void jtLarguraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtLarguraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtLarguraActionPerformed
+
+    private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
+        br.pro.aluno.processodeproducao.extras.Formularios.limparCampos(this);
+        br.pro.aluno.processodeproducao.extras.Formularios.tratarCampos(this, false);
+        jbNovo.setEnabled(true);
+        jbSalvar.setEnabled(false);
+        jbCancelar.setEnabled(false);
+        jbEditar.setEnabled(false);
+        jbExcluir.setEnabled(false);
+        DefaultTableModel mp = (DefaultTableModel) jtbDados.getModel();
+        mp.setNumRows(0);
+        //        jtPesquisa.setEnabled(true);
+    }//GEN-LAST:event_jbCancelarActionPerformed
+
+    private void jbEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEditarActionPerformed
+        br.pro.aluno.processodeproducao.extras.Formularios.tratarCampos(this, true);
+        jbNovo.setEnabled(false);
+        jbSalvar.setEnabled(true);
+        jbCancelar.setEnabled(true);
+        jbEditar.setEnabled(false);
+        jbExcluir.setEnabled(false);
+        //        jtPesquisa.setEnabled(false);
+        acao = 2;//Atualizar - update
+    }//GEN-LAST:event_jbEditarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -511,43 +504,4 @@ public class JIFProduto extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jtValorProd;
     private javax.swing.JTable jtbDados;
     // End of variables declaration//GEN-END:variables
-
-    private boolean validarCampos(){
-        if(jtNomeProd.getText().trim().length() < 3){
-            JOptionPane.showMessageDialog(this, "Digite um nome com pelo menos 3 caracteres");
-            return false;
-        }
-//        if(jtAltura.getText().trim().length() < 0){
-//            JOptionPane.showMessageDialog(this, "Altura inválida");
-//        }
-//        if(jtLargura.getText().trim().length() < 0){
-//            JOptionPane.showMessageDialog(this, "Largura inválida");
-//        }
-//        if(jtComprimento.getText().trim().length() < 0){
-//            JOptionPane.showMessageDialog(this, "Comprimento inválido");
-//        }
-//        if(jtQuantEstoque.getText().trim().length() < 0){
-//            JOptionPane.showMessageDialog(this, "Quantidade inválida");
-//        }
-//        if(jtTempFabric.getText().trim().length() < 0){
-//            JOptionPane.showMessageDialog(this, "Tempo de fabricação inválido");
-//        }
-//        if(jtValorProd.getText().trim().length() < 0){
-//            JOptionPane.showMessageDialog(this, "Valor inválido");
-//        }
-        return true;
-    }
-    
-    private boolean preencherObjeto() throws Exception{
-        obj.setIdProd(Integer.parseInt(jlId2.getText()));
-        obj.setNomeProd((jtNomeProd.getText()));
-        obj.setAltura(Double.parseDouble(jtAltura.getText()));
-        obj.setComprimento(Double.parseDouble(jtComprimento.getText()));
-        obj.setLargura(Double.parseDouble(jtLargura.getText()));
-        obj.setQuantEstoque(Integer.parseInt(jtQuantEstoque.getText()));
-        obj.setTempFabric(Double.parseDouble(jtTempFabric.getText()));
-        obj.setValorProd(Double.parseDouble(jtValorProd.getText()));
-        return true;
-    }
 }
-
