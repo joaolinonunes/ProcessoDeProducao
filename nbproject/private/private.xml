@@ -4,10 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/João/Documents/ProjetosGitHub/ProcessoDeProducao/src/br/pro/aluno/processodeproducao/view/JIFProduto.java</file>
+            <file>file:/C:/Users/João/Documents/ProjetosGitHub/ProcessoDeProducao/src/br/pro/aluno/processodeproducao/model/UsuarioModel.java</file>
             <file>file:/C:/Users/João/Documents/ProjetosGitHub/ProcessoDeProducao/src/br/pro/aluno/processodeproducao/data/ProdutoData.java</file>
+            <file>file:/C:/Users/João/Documents/ProjetosGitHub/ProcessoDeProducao/src/br/pro/aluno/processodeproducao/data/TesteConexao.java</file>
+            <file>file:/C:/Users/João/Documents/ProjetosGitHub/ProcessoDeProducao/src/br/pro/aluno/processodeproducao/model/ProdutoModel.java</file>
             <file>file:/C:/Users/João/Documents/ProjetosGitHub/ProcessoDeProducao/src/br/pro/aluno/processodeproducao/data/Conexao.java</file>
-            <file>file:/C:/Users/João/Documents/ProjetosGitHub/ProcessoDeProducao/src/br/pro/aluno/processodeproducao/view/JFPrincipal.java</file>
             <file>file:/C:/Users/João/Documents/ProjetosGitHub/ProcessoDeProducao/src/br/pro/aluno/processodeproducao/data/Banco.sql</file>
+            <file>file:/C:/Users/João/Documents/ProjetosGitHub/ProcessoDeProducao/src/br/pro/aluno/processodeproducao/view/JFPrincipal.java</file>
             <file>file:/C:/Users/João/Documents/ProjetosGitHub/ProcessoDeProducao/src/br/pro/aluno/processodeproducao/data/UsuarioData.java</file>
             <file>file:/C:/Users/João/Documents/ProjetosGitHub/ProcessoDeProducao/src/br/pro/aluno/processodeproducao/view/JIFUsuario.java</file>
         </group>
