@@ -43,13 +43,7 @@ public class UsuarioModel {
         this.rua = rua;
     }
 
-    public char getUf() {
-        return uf;
-    }
-
-    public void setUf(char uf) {
-        this.uf = uf;
-    }
+  
 
     public String getCpf() {
         return cpf;
@@ -75,33 +69,31 @@ public class UsuarioModel {
         this.nome = nome;
     }
 
-    public int getNivel() {
-        return nivel;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
+    public void setEmail(String email) {
+        this.email = email;
     }
     private int cep;
     private String cidade;
     private int nro;
     private String rua;
-    private char uf;
     private String cpf;
     private String senha;
     private String nome;
-    private int nivel;
+    private String email;
 
-    public UsuarioModel(int cep, String cidade, int nro, String rua, char uf, String cpf, String senha, String nome, int nivel) {
+    public UsuarioModel(int cep, String cidade, int nro, String rua, String cpf, String senha, String nome, String email) {
         this.cep = cep;
         this.cidade = cidade;
         this.nro = nro;
         this.rua = rua;
-        this.uf = uf;
         this.cpf = cpf;
         this.senha = senha;
         this.nome = nome;
-        this.nivel = nivel;
+        this.email = email;
     }
 
     public UsuarioModel() {
@@ -109,10 +101,9 @@ public class UsuarioModel {
         cidade = new String();
         nro = 0;
         rua = new String();
-        uf = 0;
         cpf = new String();
         senha = new String();
         nome = new String();
-        nivel = 0;
+        email = new String();
     }
 }

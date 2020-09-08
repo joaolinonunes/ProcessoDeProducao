@@ -31,6 +31,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         jmiPrincipal = new javax.swing.JMenuBar();
         jmiCadastros = new javax.swing.JMenu();
         jmiProduto = new javax.swing.JMenuItem();
+        jmiUsuario = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jmiSair = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -59,6 +60,14 @@ public class JFPrincipal extends javax.swing.JFrame {
             }
         });
         jmiCadastros.add(jmiProduto);
+
+        jmiUsuario.setText("Usuario");
+        jmiUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiUsuarioActionPerformed(evt);
+            }
+        });
+        jmiCadastros.add(jmiUsuario);
         jmiCadastros.add(jSeparator1);
 
         jmiSair.setText("Sair");
@@ -94,6 +103,12 @@ public class JFPrincipal extends javax.swing.JFrame {
     jdpPrincipal.add(janela);
     janela.setVisible(true);
     }//GEN-LAST:event_jmiProdutoActionPerformed
+
+    private void jmiUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiUsuarioActionPerformed
+     JIFUsuario janela = new JIFUsuario();
+     jdpPrincipal.add(janela);
+     janela.setVisible(true);
+    }//GEN-LAST:event_jmiUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,5 +153,6 @@ public class JFPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jmiPrincipal;
     private javax.swing.JMenuItem jmiProduto;
     private javax.swing.JMenuItem jmiSair;
+    private javax.swing.JMenuItem jmiUsuario;
     // End of variables declaration//GEN-END:variables
 }

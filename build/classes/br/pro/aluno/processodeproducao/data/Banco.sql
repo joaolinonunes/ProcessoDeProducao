@@ -2,12 +2,11 @@
 	(cep INTEGER,
 	 cidade VARCHAR(30),
 	 nro INTEGER,
-	 rua VARCHAR(20),
-	 uf CHAR(2),
-	 cpf SERIAL VARCHAR(14),
+	 rua VARCHAR(20),	
+	 cpf VARCHAR(14),
 	 senha VARCHAR(8),
 	 nome VARCHAR(50),
-	 nivel INTEGER,
+         email VARCHAR(50),
 
 	 CONSTRAINT pk_usuario PRIMARY KEY (cpf)
 	);
