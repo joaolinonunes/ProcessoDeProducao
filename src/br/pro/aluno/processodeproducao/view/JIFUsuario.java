@@ -77,14 +77,14 @@ public class JIFUsuario extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "CPF", "Nome", "Email"
+                "CPF", "Nome", "Senha", "CEP", "Cidade", "Rua", "N°", "Email"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -255,14 +255,12 @@ public class JIFUsuario extends javax.swing.JInternalFrame {
                                             .addGap(18, 18, 18)
                                             .addComponent(jtNro, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jScrollPane1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(103, Short.MAX_VALUE)
                         .addComponent(jlPesquisa)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -327,7 +325,13 @@ public class JIFUsuario extends javax.swing.JInternalFrame {
             if(linha > -1){
                 jtCpf.setText(jtbDados.getValueAt(linha, 0).toString());
                 jtNome.setText(jtbDados.getValueAt(linha, 1).toString());
-                jtEmail.setText(jtbDados.getValueAt(linha, 2).toString());
+                jtSenha.setText(jtbDados.getValueAt(linha, 2).toString());
+                jtCep.setText(jtbDados.getValueAt(linha, 3).toString());
+                jtCidade.setText(jtbDados.getValueAt(linha, 4).toString());
+                jtRua.setText(jtbDados.getValueAt(linha, 5).toString());
+                jtNro.setText(jtbDados.getValueAt(linha, 6).toString());
+                jtEmail.setText(jtbDados.getValueAt(linha, 7).toString());
+                jtCpf.setEnabled(false);
                 jtNome.setEnabled(false);
                 jtSenha.setEnabled(false);
                 jtCidade.setEnabled(false);
@@ -338,7 +342,7 @@ public class JIFUsuario extends javax.swing.JInternalFrame {
                 jbEditar.setEnabled(true);
                 jbExcluir.setEnabled(true);
                 jbSalvar.setEnabled(false);
-                jbCancelar.setEnabled(false);
+                jbCancelar.setEnabled(true);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Erro ao selecionar: "+e.getMessage());
@@ -352,8 +356,8 @@ public class JIFUsuario extends javax.swing.JInternalFrame {
                 DefaultTableModel mp = (DefaultTableModel) jtbDados.getModel();
                 mp.setNumRows(0);//limpar a tabela
                 for(UsuarioModel ob : lista){
-                    mp.addRow(new String[]{ob.getCpf(), ob.getNome(), ob.getSenha(), ""+ob.getCep(), ob.getCidade(), ob.getRua(), ""+ob.getNro(), ob.getEmail()});
-                }
+                    mp.addRow(new String[]{ob.getCpf(), ob.getNome(),ob.getSenha(), ""+ob.getCep(), ob.getCidade(), ob.getRua(), ""+ob.getNro(),ob.getEmail()});
+                } //ob.getSenha(), ""+ob.getCep(), ob.getCidade(), ob.getRua(), ""+ob.getNro(), 
             }else if (jtPesquisa.getText().trim().length()==0){
                 DefaultTableModel mp = (DefaultTableModel) jtbDados.getModel();
                 mp.setNumRows(0);
@@ -374,7 +378,7 @@ public class JIFUsuario extends javax.swing.JInternalFrame {
         jbNovo.setEnabled(false);
         jbSalvar.setEnabled(true);
         jbCancelar.setEnabled(true);
-      //  acao = 1; //Novo - insert
+        acao = 1; //Novo - insert
     }//GEN-LAST:event_jbNovoActionPerformed
 
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed

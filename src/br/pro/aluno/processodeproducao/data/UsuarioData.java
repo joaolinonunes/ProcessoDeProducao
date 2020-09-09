@@ -19,7 +19,7 @@ public class UsuarioData extends Conexao{
      public boolean incluir(UsuarioModel obj) throws Exception{
         String sql="INSERT INTO usuario (cep, cidade, nro, "
                 + "rua, cpf, senha, nome, email) "
-                + "values (?,?,?,?,?,?,?)";
+                + "values (?,?,?,?,?,?,?,?)";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setInt(1, obj.getCep());
         ps.setString(2, obj.getCidade());
